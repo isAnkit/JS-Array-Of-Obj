@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JS Array Of Object</title>
+  </head>
+  <body>
+    <script src="./script.js"></script>
+    <pre>
+
+        <center><h1> JS Coding Assignment : Array Of Object</h1></center>
+
+        <h2>1.  Question 1</h2>
+
+        let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } ] 
+
+    >> We are interested in retrieving only the students' names; all the names should be in caps.
+
+          ['JOHN', 'BABA', 'YAGA', 'WICK']"
+
+        >> Answer
+
+        <textarea>
+            
+          let stdnams = studentRecords.map((x)=>{
+            return x.name.toUpperCase();
+         })
+         console.log(stdnams);
+
+         // Output :- [ 'JOHN', 'BABA', 'YAGA', 'WICK' ]
+
+        </textarea>
+    
+    <h2> 2. Question 2</h2>
+
+    Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+    [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]
+
+    >> Answer
+
+       <textarea>
+  
+        let stdnames = studentRecords.filter((x)=>{
+          return x.marks>50;
+        })
+        console.log(stdnames);
+
+        // Output :- [
+        { name: 'John', id: 123, marks: 98 },
+        { name: 'Wick', id: 115, marks: 75 }
+      ]
+
+     </textarea>
+
+        <h2>3. Question 3</h2>
+
+        Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.
+
+            >> Answer
+
+            <textarea>
+            
+              let stdnames2 = studentRecords.filter((x)=>{
+                return x.marks>50 && x.id>120;
+            })
+            console.log(stdnames2);
+
+            // Output:- [ { name: 'John', id: 123, marks: 98 } ]
+
+        </textarea>
+
+    <h2>4. Question 4</h2>
+
+    Consider the same scenario we have discussed above, but this time we would like to know the sum 
+    total of the marks of the students.
+
+    >> Answer
+
+    <textarea>
+        
+      let sumTl = studentRecords.reduce((acc, val) => acc + val.marks, 0);
+      console.log(sumTl);
+
+      // Output:- 241
+      
+    </textarea>
+
+    <h2>5. Question 5</h2>
+
+    This time we want to get only the names of the students who scored more than 50 marks from
+    the same dataset used above.
+
+    >> Answer
+
+    <textarea>
+    
+      let stdnames = studentRecords.filter((x)=>{
+        return x.marks>50;
+    })
+    console.log(stdnames);
+
+    // Output :- [
+    { name: 'John', id: 123, marks: 98 },
+    { name: 'Wick', id: 115, marks: 75 }
+  ]
+
+    </textarea>
+    
+    <h2>6. Question 6</h2>
+
+    This time we are required to print the sum of marks of the students with id > 120.
+
+    >> Answer
+
+    <textarea>
+    
+      let stdnames2 = studentRecords.filter((x)=>{
+        return x.id>120;
+      })
+
+      let sumTll = stdnames2.reduce((acc, val) => acc + val.marks, 0);
+  console.log(sumTll);
+
+  // Output :- 143
+
+      
+    </textarea>
+
+    <h2>7. Question 7</h2>
+
+    This time we are required to print the total marks of the students with marks greater than
+    50 after a grace of 15 marks has been added to those students who scored less than 50.
+
+    >> Answer
+
+    <textarea>
+    
+      let tMarks = 0;
+
+      for (let i = 0; i < studentRecords.length; i++) {
+      let student = studentRecords[i];
+      if (student.marks < 50) {
+          tMarks += student.marks + 15;
+      } else {
+          tMarks += student.marks;
+      }
+      }
+  
+      console.log(tMarks);
+  
+      // Output:- 271         
+      
+    </textarea>
+
+    <h2>8. Question 8</h2>
+
+    Create 6 objects , each object will have name, class, roll no as properties. Store these 
+    objects in an array of objects. 
+
+    >> Answer
+
+    <textarea>
+    
+      let studentRecord = [
+      {name: 'John', class: '10th', rollNo: 1},
+      {name: 'Baba', class: '9th', rollNo: 2},
+      {name: 'Yaga', class: '8th', rollNo: 3},
+      {name: 'Wick', class: '7th', rollNo: 4},
+      {name: 'Winston', class: '6th', rollNo: 5},
+      {name: 'Charon', class: '5th', rollNo: 6}
+    ];
+
+    console.log(studentRecord);
+
+    </textarea>
+  
+    </pre>
+  </body>
+</html>
